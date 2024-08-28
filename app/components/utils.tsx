@@ -9,12 +9,13 @@ export function convertDate(date: string): string {
   if (date == null) {
     return 'Present';
   }
-  let dateObject = new Date(`${date}-01`);
+  let dateObject = new Date(`${date}-15`);
   let month = dateObject.toLocaleString('default', { month: 'long' });
   return `${month} ${dateObject.getFullYear()}`;
 }
 
-export const url: string = 'http://localhost:5000/v1/users/24231cbe-35cf-415f-843e-7032ae052ae4';
+export const url: string = 'http://localhost:5000/v1/users/4a4fe1b6-1e03-4162-99af-be6a14b0fa04';
+export const curriculum: string = "https://docs.google.com/document/d/1t00DRB2W4SMrxiAJeZmHcxrAqfv43ArJiTRjLwAsLIM/preview";
 
 export async function fetchData(path: string, setData) {
   try {

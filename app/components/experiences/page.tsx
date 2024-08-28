@@ -20,7 +20,7 @@ const Experiences = () => {
         Experiences
       </Title>
 
-      <div className="divide-y divide-slate-200">
+      <div className="pb-14 border-b border-slate-300 mb-14">
         {data.map((exp) => {
           return (
             <div className="flex gap-4 py-6" key={exp.id}>
@@ -39,7 +39,7 @@ const Experiences = () => {
                         className="text-slate-700 text-lg">{detail.role}</span>
 
                       <div className="mt-3">
-                        <p><b>Project:</b> {detail.project}</p>
+                        <p><b>Project:</b> {detail.project};</p>
                         <p><b>Description:</b></p>
                         <ul>
                           {detail.description.map((desc) => {

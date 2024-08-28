@@ -6,6 +6,16 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.text-xs-line-height {
+  font-size: 0.75rem;
+  line-height: 1.3rem;
+}
+
+.text-base-line-height {
+  font-size: 1rem;
+  line-height: 1.2rem;
+}
+
 /* This is needed as there is a bug in Safari which is causing our font weights to render weirdly. */
 @layer utilities {
   .font-thin,
