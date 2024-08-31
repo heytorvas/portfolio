@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { Education } from '@/app/components/educations/model';
 import { convertDate, fetchData } from '@/app/components/utils';
 import { Title } from '@/app/components/title';
+import Image from 'next/image';
 
 const Educations = () => {
   const [data, setData] = useState<Education[]>([]);
@@ -22,6 +23,13 @@ const Educations = () => {
         {data.map((education) => {
           return (
             <div className="flex gap-4 py-6" key={education.id}>
+              <Image
+                  width={56}
+                  height={56}
+                  src={education.logo}
+                  alt={`${education.school} logo`}
+                  className="w-14 h-14 rounded-xl"
+              />
               <div className="flex flex-col col-span-9">
                 <span className="text-slate-800 text-xl font-semibold">
                   {education.school} <span

@@ -5,6 +5,7 @@ import { Title } from '@/app/components/title';
 import { Badge } from '@/app/components/badge';
 import { Experience } from '@/app/components/experiences/model';
 import { fetchData, convertDate } from '@/app/components/utils';
+import Image from 'next/image';
 
 
 const Experiences = () => {
@@ -24,6 +25,13 @@ const Experiences = () => {
         {data.map((exp) => {
           return (
             <div className="flex gap-4 py-6" key={exp.id}>
+              <Image
+                  width={56}
+                  height={56}
+                  src={exp.logo}
+                  alt={`${exp.company} logo`}
+                  className="w-14 h-14 rounded-xl"
+              />
               <div className="flex flex-col col-span-9">
                 <span className="text-slate-800 text-xl font-semibold">
                   {exp.company} <span
@@ -56,7 +64,7 @@ const Experiences = () => {
                 <div className="flex flex-wrap gap-2 py-3">
                   {exp.stack.map((tech) => {
                     return (
-                      <Badge>{tech}</Badge>
+                      <Badge key={tech}>{tech}</Badge>
                     );
                   })}
                 </div>

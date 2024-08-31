@@ -12,4 +12,5 @@ export interface Experience {
   company: string;
   stack: string[];
   details: ExperienceDetail[];
+  logo: string;
 }
