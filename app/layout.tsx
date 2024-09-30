@@ -81,12 +81,6 @@ export default function RootLayout({
         </Link>
         <nav className="flex gap-4">
           <Link
-            href="/posts"
-            className="text-950 text-sm tracking-tighter font-mono font-semibold"
-          >
-            Posts
-          </Link>
-          <Link
             className="text-950 text-sm tracking-tighter font-mono font-semibold"
             href="/contact"
           >

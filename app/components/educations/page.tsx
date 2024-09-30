@@ -1,17 +1,13 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
-import { Education } from '@/app/components/educations/model';
-import { convertDate, fetchData } from '@/app/components/utils';
+import React from 'react';
+import { convertDate } from '@/app/components/utils';
 import { Title } from '@/app/components/title';
 import Image from 'next/image';
+import educationData from '@/app/data/educations.json'
 
 const Educations = () => {
-  const [data, setData] = useState<Education[]>([]);
-
-  useEffect(() => {
-    fetchData('educations', setData);
-  }, []);
+  const data = educationData;
 
   return (
     <section>

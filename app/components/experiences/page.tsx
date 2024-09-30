@@ -1,19 +1,15 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Title } from '@/app/components/title';
 import { Badge } from '@/app/components/badge';
-import { Experience } from '@/app/components/experiences/model';
-import { fetchData, convertDate } from '@/app/components/utils';
+import { convertDate } from '@/app/components/utils';
 import Image from 'next/image';
+import experiencesData from '@/app/data/experiences.json'
 
 
 const Experiences = () => {
-  const [data, setData] = useState<Experience[]>([]);
-
-  useEffect(() => {
-    fetchData('experiences', setData);
-  }, []);
+  const data = experiencesData;
 
   return (
     <section>
@@ -36,13 +32,13 @@ const Experiences = () => {
                 <span className="text-slate-800 text-xl font-semibold">
                   {exp.company} <span
                   className="text-slate-500 col-span-2 text-sm font-medium tracking-tighter font-mono">
-                    {convertDate(exp.date_from)} → {convertDate(exp.date_to)}
+                    {convertDate(exp.date_from)} → {convertDate(exp.date_to!)}
                   </span>
                 </span>
 
                 {exp.details.map((detail) => {
                   return (
-                    <div className="flex flex-col col-span-9">
+                    <div className="flex flex-col col-span-9" key={detail.role}>
                       <span
                         className="text-slate-700 text-lg">{detail.role}</span>
 
@@ -52,7 +48,7 @@ const Experiences = () => {
                         <ul>
                           {detail.description.map((desc) => {
                             return (
-                              <li>🞄 {desc};</li>
+                              <li key={desc}>🞄 {desc};</li>
                             );
                           })}
                         </ul>

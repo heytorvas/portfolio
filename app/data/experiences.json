@@ -1,0 +1,127 @@
+[
+    {
+        "id": "7da25f8b-3500-4a77-bbfd-983f6cdc98c6",
+        "date_from": "2024-04",
+        "date_to": null,
+        "user": "86fd0a31-4d1c-4950-99bc-959aa77d33f7",
+        "company": "Objective",
+        "stack": [
+            "Python",
+            "Flask",
+            "MySQL",
+            "DynamoDB",
+            "Docker",
+            "GitHub",
+            "Scrum",
+            "XP"
+        ],
+        "details": [
+            {
+                "role": "Software Engineer",
+                "project": "Pricing Tool",
+                "description": [
+                    "Development of an internal platform to assist with product pricing"
+                ]
+            }
+        ],
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRHP90t3ZO_eyuRZfPQ2blg34GfuKW_kBXzw&s"
+    },
+    {
+        "id": "eb142ff1-288e-4607-93d4-f4fbc89d53b7",
+        "date_from": "2022-03",
+        "date_to": "2024-04",
+        "user": "86fd0a31-4d1c-4950-99bc-959aa77d33f7",
+        "company": "idwall",
+        "stack": [
+            "Python",
+            "FastAPI",
+            "MongoDB",
+            "PostgreSQL",
+            "Docker",
+            "Kubernetes",
+            "Airflow",
+            "Spark",
+            "GCS",
+            "AWS",
+            "BigQuery",
+            "Databricks",
+            "Scrum",
+            "Kanban",
+            "GitLab"
+        ],
+        "details": [
+            {
+                "role": "Software Engineer",
+                "project": "Facelink, FaceMatch, Liveness and Onlylabels",
+                "description": [
+                    "Development of a tool to facial biometric validation by selfie (a photo) and taxpayer identification number (CPF)",
+                    "Development of a tool to authentication by facial recognition",
+                    "Development of an image labeling internal tool"
+                ]
+            }
+        ],
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWRH4Gx67a0Y093S0jSazdKV4kTZ7_DI8B4A&s"
+    },
+    {
+        "id": "1f05a162-e21b-4977-a6a9-61f759aaa204",
+        "date_from": "2021-01",
+        "date_to": "2022-03",
+        "user": "86fd0a31-4d1c-4950-99bc-959aa77d33f7",
+        "company": "Zetta",
+        "stack": [
+            "Python",
+            "Flask",
+            "Django",
+            "Selenium",
+            "BeautifulSoup",
+            "RabbitMQ",
+            "Redis",
+            "PostgreSQL",
+            "Postgis",
+            "Angular",
+            "Docker",
+            "Scrum",
+            "XP",
+            "GitLab"
+        ],
+        "details": [
+            {
+                "role": "Data Scientist",
+                "project": "MPF, VALE and MVPOWER",
+                "description": [
+                    "Development of ETLs to data extraction and APIs to data visualization by message broker",
+                    "Development of portal using Geonode to maps, layers and documents visualization"
+                ]
+            }
+        ],
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIIKU6jl8Tsid9Xq1gvanCHluHmDDk3kkDQg&s"
+    },
+    {
+        "id": "829bb502-0c10-45b4-830a-c9847c2d255d",
+        "date_from": "2019-10",
+        "date_to": "2020-10",
+        "user": "86fd0a31-4d1c-4950-99bc-959aa77d33f7",
+        "company": "ESC",
+        "stack": [
+            "Python",
+            "Django",
+            "Selenium",
+            "BeautifulSoup",
+            "PostgreSQL",
+            "Angular",
+            "Scrum",
+            "GitLab"
+        ],
+        "details": [
+            {
+                "role": "Full Stack Developer",
+                "project": "TCE/TO",
+                "description": [
+                    "Scraping, by ETLs, of the expenses of the transparency portals of the city halls and town halls of Tocantins municipalities",
+                    "Development of a statistics dashboard about organizations using APIs"
+                ]
+            }
+        ],
+        "logo": "https://www.unitins.br/cms/Midia/Imagens/GRF0LVO4QFWHJBYBJZUO4LOIYSU7QMFBXDCKAB380.png"
+    }
+]

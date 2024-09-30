@@ -1,16 +1,9 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { AboutModel } from '@/app/components/about/model';
-import { fetchData } from '@/app/components/utils';
-import Link from 'next/link';
+import aboutData from '@/app/data/about.json'
 
 const About = () => {
-  const [data, setData] = useState<Partial<AboutModel>>({});
-
-  useEffect(() => {
-    fetchData("about", setData);
-  }, []);
+  const data = aboutData;
 
   return (
     <section className="pb-14 border-b border-slate-300 mb-14">

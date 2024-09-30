@@ -27,7 +27,7 @@ const projects: {
 const Projects = () => {
 
   return (
-    <section className="pb-14 border-b border-slate-300 mb-14">
+    <section className="pb-14 border-slate-300 mb-14">
       <Title as="h2" variant="secondary" className="mb-4 mt-8">
         Projects
       </Title>

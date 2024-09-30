@@ -11,13 +11,10 @@ import Experiences from '@/app/components/experiences/page';
 import About from '@/app/components/about/page';
 import Educations from '@/app/components/educations/page';
 import Projects from '@/app/components/projects/page';
+import RecentPosts from '@/app/components/recents/page';
 
 
 export default async function Home() {
-  const posts = await getAllPosts({
-    includeDrafts: process.env.NODE_ENV === 'development',
-  });
-
   return (
     <main className="px-4 md:px-0">
       <About/>
@@ -28,34 +25,6 @@ export default async function Home() {
 
       <Projects/>
 
-      <section className="mb-4 mt-8">
-        <Title as="h2" variant="secondary" className="mb-8">
-          Recent Posts
-        </Title>
-        <div className="divide-y">
-          {posts.slice(0, 3).map((post) => {
-            return (
-              <ArticleLink
-                key={post?.meta.title}
-                href={post.href}
-                title={post.meta.title}
-                date={post?.date}
-                summary={post.meta.summary}
-              />
-            );
-          })}
-        </div>
-        <Link
-          href="/posts"
-          className="group bg-slate-950 hover:bg-slate-800 transition-colors inline-block mt-8 font-mono text-xs font-semibold rounded-full px-8 py-3 text-white"
-        >
-          View More{' '}
-          <span
-            className="inline-block group-hover:translate-x-2 transition-transform">
-            →
-          </span>
-        </Link>
-      </section>
     </main>
   );
 }

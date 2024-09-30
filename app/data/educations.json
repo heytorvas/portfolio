@@ -1,0 +1,22 @@
+[
+    {
+        "id": "1b4db6e2-0eed-4e06-8852-a3c133e46a1c",
+        "date_from": "2023-07",
+        "date_to": "2023-10",
+        "user": "86fd0a31-4d1c-4950-99bc-959aa77d33f7",
+        "degree": "Postgraduate Degree",
+        "school": "UNICV",
+        "course": "Data Science and Big Data",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQknmJ1r5B8S_ywHp_8GOeK0fCwe5-wTjY_Gw&s"
+    },
+    {
+        "id": "72965b55-aff4-4ea9-88c5-630f8ac25fd6",
+        "date_from": "2018-02",
+        "date_to": "2021-12",
+        "user": "86fd0a31-4d1c-4950-99bc-959aa77d33f7",
+        "degree": "Bachelor Degree",
+        "school": "State of Tocantins University",
+        "course": "Information Systems",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrJ7-x7S-BP7D14uimC36ZSf1cE2Np7O0mIw&s"
+    }
+]
