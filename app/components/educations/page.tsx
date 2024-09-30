@@ -4,7 +4,7 @@ import React from 'react';
 import { convertDate } from '@/app/components/utils';
 import { Title } from '@/app/components/title';
 import Image from 'next/image';
-import educationData from '@/app/data/educations.json'
+import educationData from '@/public/api/educations.json'
 
 const Educations = () => {
   const data = educationData;

@@ -5,7 +5,7 @@ import { Title } from '@/app/components/title';
 import { Badge } from '@/app/components/badge';
 import { convertDate } from '@/app/components/utils';
 import Image from 'next/image';
-import experiencesData from '@/app/data/experiences.json'
+import experiencesData from '@/public/api/experiences.json'
 
 
 const Experiences = () => {

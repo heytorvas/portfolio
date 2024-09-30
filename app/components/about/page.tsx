@@ -1,6 +1,6 @@
 'use client';
 
-import aboutData from '@/app/data/about.json'
+import aboutData from '@/public/api/about.json'
 
 const About = () => {
   const data = aboutData;
