@@ -1,27 +1,27 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 
 interface Post {
-  meta: {
-    [key: string]: string;
-  };
-  slug: string;
-  date: string;
-  href: string;
-  content: string;
+	meta: {
+		[key: string]: string;
+	};
+	slug: string;
+	date: string;
+	href: string;
+	content: string;
 }
 
 export const getRegexForSlug = (slug: string): RegExp => {
-  return new RegExp(`^\\d{4}-\\d{2}-\\d{2}-${slug}.mdx$`);
+	return new RegExp(`^\\d{4}-\\d{2}-\\d{2}-${slug}.mdx$`);
 };
 
-const POSTS_PATH = 'posts';
-const WORK_PATH = 'projects';
+const POSTS_PATH = "posts";
+const WORK_PATH = "projects";
 
 interface DateAndSlug {
-  date: string;
-  slug: string;
+	date: string;
+	slug: string;
 }
 
 /**
@@ -30,16 +30,16 @@ interface DateAndSlug {
  * @returns An object containing the date and slug, or null if the filename does not match the expected format.
  */
 export const getDateAndSlugFromFilename = (
-  filename: string
+	filename: string,
 ): DateAndSlug | null => {
-  const match = filename.match(/^(\d{4}-\d{2}-\d{2})-(.*).mdx$/);
-  if (match) {
-    return {
-      date: match[1],
-      slug: match[2],
-    };
-  }
-  return null;
+	const match = filename.match(/^(\d{4}-\d{2}-\d{2})-(.*).mdx$/);
+	if (match) {
+		return {
+			date: match[1],
+			slug: match[2],
+		};
+	}
+	return null;
 };
 
 /**
@@ -48,28 +48,28 @@ export const getDateAndSlugFromFilename = (
  * @returns An object containing the front matter, date, slug, and href, or null if the filename does not match the expected format.
  */
 const getPostFromFile = (filename: string, isWork?: boolean): Post | null => {
-  const fileContent = fs.readFileSync(
-    path.join(isWork ? WORK_PATH : POSTS_PATH, filename),
-    'utf-8'
-  );
+	const fileContent = fs.readFileSync(
+		path.join(isWork ? WORK_PATH : POSTS_PATH, filename),
+		"utf-8",
+	);
 
-  const { data: frontMatter, content } = matter(fileContent);
+	const { data: frontMatter, content } = matter(fileContent);
 
-  const dateAndSlug = getDateAndSlugFromFilename(filename);
+	const dateAndSlug = getDateAndSlugFromFilename(filename);
 
-  if (!dateAndSlug) {
-    return null;
-  }
+	if (!dateAndSlug) {
+		return null;
+	}
 
-  const { date, slug } = dateAndSlug;
+	const { date, slug } = dateAndSlug;
 
-  return {
-    meta: frontMatter,
-    content,
-    slug,
-    date,
-    href: `/${isWork ? 'projects' : 'posts'}/${slug}`,
-  };
+	return {
+		meta: frontMatter,
+		content,
+		slug,
+		date,
+		href: `/${isWork ? "projects" : "posts"}/${slug}`,
+	};
 };
 
 /**
@@ -78,18 +78,18 @@ const getPostFromFile = (filename: string, isWork?: boolean): Post | null => {
  * @returns The post with the given slug, or null if no such post exists.
  */
 export const getPostBySlug = (slug: string, isWork?: boolean): Post | null => {
-  const files = fs.readdirSync(path.join(isWork ? WORK_PATH : POSTS_PATH));
+	const files = fs.readdirSync(path.join(isWork ? WORK_PATH : POSTS_PATH));
 
-  for (const filename of files) {
-    if (getRegexForSlug(slug).test(filename)) {
-      const post = getPostFromFile(filename, isWork);
-      if (post) {
-        return post;
-      }
-    }
-  }
+	for (const filename of files) {
+		if (getRegexForSlug(slug).test(filename)) {
+			const post = getPostFromFile(filename, isWork);
+			if (post) {
+				return post;
+			}
+		}
+	}
 
-  return null;
+	return null;
 };
 
 /**
@@ -97,28 +97,28 @@ export const getPostBySlug = (slug: string, isWork?: boolean): Post | null => {
  * @returns An array of all posts, sorted by date in descending order.
  */
 export const getAllPosts = async ({
-  includeDrafts,
-  filePath,
-  isWork,
+	includeDrafts,
+	filePath,
+	isWork,
 }: {
-  includeDrafts?: boolean;
-  filePath?: string;
-  isWork?: boolean;
+	includeDrafts?: boolean;
+	filePath?: string;
+	isWork?: boolean;
 }): Promise<Post[]> => {
-  const files = fs.readdirSync(path.join(isWork ? WORK_PATH : POSTS_PATH));
+	const files = fs.readdirSync(path.join(isWork ? WORK_PATH : POSTS_PATH));
 
-  const posts: Post[] = files
-    .map((item) => getPostFromFile(item, isWork))
-    .filter((post): post is Post => post !== null);
+	const posts: Post[] = files
+		.map((item) => getPostFromFile(item, isWork))
+		.filter((post): post is Post => post !== null);
 
-  const filteredAndSortedPosts = posts.sort((a, b) => {
-    if (new Date(a.date) > new Date(b.date)) {
-      return -1;
-    }
-    return 1;
-  });
+	const filteredAndSortedPosts = posts.sort((a, b) => {
+		if (new Date(a.date) > new Date(b.date)) {
+			return -1;
+		}
+		return 1;
+	});
 
-  return filteredAndSortedPosts;
+	return filteredAndSortedPosts;
 };
 
 /**
@@ -126,9 +126,9 @@ export const getAllPosts = async ({
  * @returns An array of all the paths for the posts.
  */
 export async function getAllPostPaths(isWork?: boolean) {
-  const posts = await getAllPosts({ isWork });
+	const posts = await getAllPosts({ isWork });
 
-  const paths = posts.map((post) => ({ slug: post.slug }));
+	const paths = posts.map((post) => ({ slug: post.slug }));
 
-  return paths;
+	return paths;
 }

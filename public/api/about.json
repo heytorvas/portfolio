@@ -1,15 +1,15 @@
 {
-    "id": "eacc83a4-10ad-4ce7-8a1b-7ce49d6d4d55",
-    "user": "86fd0a31-4d1c-4950-99bc-959aa77d33f7",
-    "address": {
-        "city": "Paraíso do Tocantins",
-        "state": "TO",
-        "country": "Brazil"
-    },
-    "social_network": {
-        "website": "https://heytor.dev",
-        "github": "https://github.com/heytorvas",
-        "linkedin": "https://linkedin.com/in/heytorvictor"
-    },
-    "summary": "Postgraduate in Data Science and Big Data by UNICV, graduate in Information Systems by State of Tocantins University, working as Python Software Engineer with development, maintenance and architecture of APIs. Also, I had professional experience as Data Scientist/Engineer, with development scraping/crawlers pipelines consuming the most common databases and training image recognition models."
+	"id": "eacc83a4-10ad-4ce7-8a1b-7ce49d6d4d55",
+	"user": "86fd0a31-4d1c-4950-99bc-959aa77d33f7",
+	"address": {
+		"city": "Paraíso do Tocantins",
+		"state": "TO",
+		"country": "Brazil"
+	},
+	"social_network": {
+		"website": "https://heytor.dev",
+		"github": "https://github.com/heytorvas",
+		"linkedin": "https://linkedin.com/in/heytorvictor"
+	},
+	"summary": "Postgraduate in Data Science and Big Data by UNICV, graduate in Information Systems by State of Tocantins University, working as Python Software Engineer with development, maintenance and architecture of APIs. Also, I had professional experience as Data Scientist/Engineer, with development scraping/crawlers pipelines consuming the most common databases and training image recognition models."
 }
