@@ -10,7 +10,7 @@ export function convertDate(date: string): string {
 		return "Present";
 	}
 	let dateObject = new Date(`${date}-15`);
-	let month = dateObject.toLocaleString("default", { month: "long" });
+	let month = dateObject.toLocaleString("en-US", { month: "long" });
 	return `${month} ${dateObject.getFullYear()}`;
 }
 

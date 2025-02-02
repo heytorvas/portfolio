@@ -16,6 +16,30 @@
 	line-height: 1.2rem;
 }
 
+.not-found{
+	  display: table-cell;
+	  vertical-align: middle;
+}
+
+.not-found h1{
+	  font-size: 50px;
+	  display: inline-block;
+	  padding-right: 12px;
+	  animation: type .5s alternate infinite;
+}
+
+#not-found{
+    display: table;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+}
+
+@keyframes type{
+	  from{box-shadow: inset -3px 0px 0px #020617;}
+	  to{box-shadow: inset -3px 0px 0px transparent;}
+}
+
 /* This is needed as there is a bug in Safari which is causing our font weights to render weirdly. */
 @layer utilities {
 	.font-thin,

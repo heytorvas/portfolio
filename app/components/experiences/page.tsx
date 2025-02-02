@@ -51,7 +51,7 @@ const Experiences = () => {
 												</p>
 												<ul>
 													{detail.description.map((desc) => {
-														return <li key={desc}>🞄 {desc};</li>;
+														return <li key={desc}>• {desc};</li>;
 													})}
 												</ul>
 											</div>
