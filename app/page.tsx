@@ -21,8 +21,6 @@ export default async function Home() {
 			<Experiences />
 
 			<Educations />
-
-			<Projects />
 		</main>
 	);
 }

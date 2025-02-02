@@ -15,7 +15,7 @@ const Educations = () => {
 				Educations
 			</Title>
 
-			<div className="pb-14 border-b border-slate-300 mb-14">
+			<div className="pb-14 border-b border-slate-300">
 				{data.map((education) => {
 					return (
 						<div className="flex gap-4 py-6" key={education.id}>
