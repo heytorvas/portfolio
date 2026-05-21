@@ -8,19 +8,23 @@
 		"stack": [
 			"Python",
 			"Flask",
+			"FastAPI",
+			"PostgreSQL",
 			"MySQL",
 			"DynamoDB",
+			"AWS",
 			"Docker",
-			"GitHub",
 			"Scrum",
 			"XP"
 		],
 		"details": [
 			{
 				"role": "Software Engineer",
-				"project": "Pricing Tool",
+				"project": "Pricing Tool, P&S and Anonymous",
 				"description": [
-					"Development of an internal platform to assist with product pricing"
+					"Development of an internal tool for price costs and profits",
+					"Development of an internal tool for validate sanctioned and politically exposed people",
+					"Development of an internal tool for data anonymization in accordance with information security standards and policies"
 				]
 			}
 		],
@@ -114,7 +118,7 @@
 		],
 		"details": [
 			{
-				"role": "Full Stack Developer",
+				"role": "Data Engineer",
 				"project": "TCE/TO",
 				"description": [
 					"Scraping, by ETLs, of the expenses of the transparency portals of the city halls and town halls of Tocantins municipalities",
