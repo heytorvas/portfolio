@@ -13,6 +13,11 @@ function readPkg(): Pkg {
 	) as Pkg;
 }
 
+/** Matches a semver range pinned to `major`, anchored so `^3.4.17` cannot pass for 4. */
+function majorRange(major: number): RegExp {
+	return new RegExp(`^[\\^~]?${major}\\.`);
+}
+
 describe("dependency policy", () => {
 	it("does not depend on removed MDX stack or Biome", () => {
 		const pkg = readPkg();
@@ -24,21 +29,28 @@ describe("dependency policy", () => {
 			"rehype-highlight",
 			"@biomejs/biome",
 			"@tailwindcss/typography",
+			"autoprefixer",
 		]) {
 			expect(all[name], name).toBeUndefined();
 		}
 	});
 
-	it("stays on React 19 and Tailwind 3 ranges", () => {
+	it("stays on React 19 and Tailwind 4 ranges", () => {
 		const pkg = readPkg();
-		expect(pkg.dependencies?.react).toMatch(/\b19\./);
-		expect(pkg.dependencies?.["react-dom"]).toMatch(/\b19\./);
-		expect(pkg.devDependencies?.tailwindcss).toMatch(/\b3\./);
+		expect(pkg.dependencies?.react).toMatch(majorRange(19));
+		expect(pkg.dependencies?.["react-dom"]).toMatch(majorRange(19));
+		expect(pkg.devDependencies?.tailwindcss).toMatch(majorRange(4));
+		expect(pkg.devDependencies?.["@tailwindcss/postcss"]).toMatch(majorRange(4));
+	});
+
+	it("keeps tailwind-merge on the Tailwind 4 compatible major", () => {
+		const pkg = readPkg();
+		expect(pkg.dependencies?.["tailwind-merge"]).toMatch(majorRange(3));
 	});
 
 	it("aligns Next and its ESLint config on 16.x", () => {
 		const pkg = readPkg();
-		expect(pkg.dependencies?.next).toMatch(/\b16\./);
-		expect(pkg.devDependencies?.["eslint-config-next"]).toMatch(/\b16\./);
+		expect(pkg.dependencies?.next).toMatch(majorRange(16));
+		expect(pkg.devDependencies?.["eslint-config-next"]).toMatch(majorRange(16));
 	});
 });
