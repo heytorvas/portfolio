@@ -2,14 +2,21 @@ import { describe, expect, it } from "vitest";
 import { cn, convertDate } from "@/lib/utils";
 
 describe("convertDate", () => {
-	it('returns "Present" for nullish values', () => {
+	it('returns "Present" for nullish or empty values', () => {
 		expect(convertDate(null)).toBe("Present");
 		expect(convertDate(undefined)).toBe("Present");
+		expect(convertDate("")).toBe("Present");
 	});
 
 	it("formats YYYY-MM as Month YYYY in en-US", () => {
 		expect(convertDate("2024-04")).toBe("April 2024");
 		expect(convertDate("2022-03")).toBe("March 2022");
+	});
+
+	it('returns "Present" for invalid strings', () => {
+		expect(convertDate("not-a-date")).toBe("Present");
+		expect(convertDate("2024")).toBe("Present");
+		expect(convertDate("2024-13")).toBe("Present");
 	});
 });
 
