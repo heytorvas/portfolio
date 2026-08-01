@@ -6,7 +6,7 @@ import { Analytics } from "@vercel/analytics/react";
 import localFont from "next/font/local";
 import { JetBrains_Mono } from "next/font/google";
 
-import clsx from "clsx";
+import { cn } from "@/lib/utils";
 import { RESUME_URL, personJsonLd } from "@/lib/content/profile";
 
 const SaansFont = localFont({
@@ -52,7 +52,7 @@ export default function RootLayout({
 				/>
 			</head>
 			<body
-				className={clsx(
+				className={cn(
 					SaansFont.className,
 					JetBrainsMonoFont.variable,
 					"bg-slate-50",

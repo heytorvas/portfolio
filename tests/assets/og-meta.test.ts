@@ -17,4 +17,11 @@ describe("open graph asset", () => {
 		expect(layout).toContain("Heytor Victor");
 		expect(layout).not.toContain("Alex Pate");
 	});
+
+	it("keeps og.png reasonably compressed", () => {
+		const size = readFileSync(
+			path.join(process.cwd(), "public/og.png"),
+		).byteLength;
+		expect(size).toBeLessThan(200_000);
+	});
 });

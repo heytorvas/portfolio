@@ -1,20 +1,17 @@
-import Link from 'next/link'
+import Link from "next/link";
 
 export default function NotFound() {
-  return (
-    <div id="not-found">
-      <div className="not-found">
-        <h1>[Error] 404 Not Found</h1>
-        <p></p>
-        <Link
-          href="/"
-          target="_blank"
-          className="group bg-slate-950 hover:bg-slate-800 transition-colors inline-block font-mono text-xs-line-height font-semibold rounded-full px-4 text-white"
-        >
-          Go to Home
-        </Link>
-      </div>
-
-    </div>
-  )
+	return (
+		<div id="not-found">
+			<div className="not-found">
+				<h1>[Error] 404 Not Found</h1>
+				<Link
+					href="/"
+					className="group inline-block rounded-full bg-slate-950 px-4 font-mono text-xs-line-height font-semibold text-white transition-colors hover:bg-slate-800"
+				>
+					Go to Home
+				</Link>
+			</div>
+		</div>
+	);
 }

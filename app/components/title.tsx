@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { cn } from "@/lib/utils";
 
 interface Props {
 	children: React.ReactNode;
@@ -21,7 +21,7 @@ export function Title({
 }: Props) {
 	const Component = as;
 	return (
-		<Component className={clsx(classNames[variant], className)}>
+		<Component className={cn(classNames[variant], className)}>
 			{children}
 		</Component>
 	);
