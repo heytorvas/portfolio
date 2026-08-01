@@ -1,0 +1,12 @@
+node_modules
+.next
+.next-build
+.git
+.github
+.superpowers
+docs/superpowers
+coverage
+.idea
+*.md
+.env*
+.trivyignore
