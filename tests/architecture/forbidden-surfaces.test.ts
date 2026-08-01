@@ -22,3 +22,13 @@ describe("forbidden surfaces (posts / MDX)", () => {
 		expect(exists(rel)).toBe(false);
 	});
 });
+
+describe("forbidden surfaces (projects)", () => {
+	it.each([
+		"app/components/projects",
+		"public/brazilian-worker.png",
+		"public/curriculum.png",
+	])("%s must not exist", (rel) => {
+		expect(exists(rel)).toBe(false);
+	});
+});
