@@ -7,7 +7,7 @@ import localFont from "next/font/local";
 import { JetBrains_Mono } from "next/font/google";
 
 import clsx from "clsx";
-import { RESUME_URL } from "@/lib/constants";
+import { RESUME_URL, personJsonLd } from "@/lib/content/profile";
 
 const SaansFont = localFont({
 	src: "./saans-font.woff2",
@@ -38,19 +38,6 @@ export const metadata: Metadata = {
 	metadataBase: new URL("https://heytor.dev"),
 };
 
-const jsonLd = {
-	"@context": "https://schema.org",
-	"@type": "Person",
-	name: "Heytor Victor",
-	image: "https://heytor.dev/avatar.jpg",
-	url: "https://heytor.dev",
-	jobTitle: "Software Engineer",
-	sameAs: [
-		"https://www.github.com/heytorvas",
-		"https://www.linkedin.com/in/heytorvictor/",
-	],
-};
-
 export default function RootLayout({
 	children,
 }: {
@@ -61,7 +48,7 @@ export default function RootLayout({
 			<head>
 				<script
 					type="application/ld+json"
-					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+					dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
 				/>
 			</head>
 			<body
@@ -88,6 +75,7 @@ export default function RootLayout({
 							<Link
 								href={RESUME_URL}
 								target="_blank"
+								rel="noopener noreferrer"
 								className="group bg-slate-950 hover:bg-slate-800 transition-colors inline-block font-mono text-xs-line-height font-semibold rounded-full px-4 text-white"
 							>
 								Resume{" "}

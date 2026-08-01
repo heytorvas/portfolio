@@ -1,35 +1,7 @@
 import Link from "next/link";
 import { PageHeader } from "@/app/components/page-header";
 import { Title } from "@/app/components/title";
-
-type ContactMethod = {
-	method: string;
-	link: string;
-	label: string;
-};
-
-const contactMethods: ContactMethod[] = [
-	{
-		method: "Email",
-		link: "mailto:heytor@heytor.dev",
-		label: "heytor@heytor.dev",
-	},
-	{
-		method: "GitHub",
-		link: "https://github.com/heytorvas",
-		label: "@heytorvas",
-	},
-	{
-		method: "LinkedIn",
-		link: "https://www.linkedin.com/in/heytorvictor/",
-		label: "@heytorvictor",
-	},
-	{
-		method: "Telegram",
-		link: "https://t.me/heytor",
-		label: "@heytor",
-	},
-];
+import { contactMethods } from "@/lib/content/profile";
 
 export default function ContactPage() {
 	return (
