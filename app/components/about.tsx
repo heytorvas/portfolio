@@ -1,4 +1,4 @@
-import aboutData from "@/public/api/about.json";
+import { about } from "@/lib/content/about";
 
 const About = () => {
 	return (
@@ -10,7 +10,7 @@ const About = () => {
 				</span>
 			</h1>
 			<p className="text-slate-700 text-lg md:text-xl leading-normal">
-				{aboutData.summary}
+				{about.summary}
 			</p>
 		</section>
 	);

@@ -2,11 +2,9 @@ import { Title } from "@/app/components/title";
 import { Badge } from "@/app/components/badge";
 import { convertDate } from "@/lib/utils";
 import Image from "next/image";
-import experiencesData from "@/public/api/experiences.json";
+import { experiences } from "@/lib/content/experiences";
 
 const Experiences = () => {
-	const data = experiencesData;
-
 	return (
 		<section>
 			<Title as="h2" variant="secondary" className="mb-4 mt-8">
@@ -14,7 +12,7 @@ const Experiences = () => {
 			</Title>
 
 			<div className="pb-14 border-b border-slate-300 mb-14">
-				{data.map((exp) => {
+				{experiences.map((exp) => {
 					return (
 						<div className="flex gap-4 py-6" key={exp.id}>
 							<Image

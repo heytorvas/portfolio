@@ -1,11 +1,9 @@
 import { convertDate } from "@/lib/utils";
 import { Title } from "@/app/components/title";
 import Image from "next/image";
-import educationData from "@/public/api/educations.json";
+import { educations } from "@/lib/content/educations";
 
 const Educations = () => {
-	const data = educationData;
-
 	return (
 		<section>
 			<Title as="h2" variant="secondary" className="mb-4 mt-8 ">
@@ -13,7 +11,7 @@ const Educations = () => {
 			</Title>
 
 			<div className="pb-14 border-b border-slate-300">
-				{data.map((education) => {
+				{educations.map((education) => {
 					return (
 						<div className="flex gap-4 py-6" key={education.id}>
 							<Image

@@ -3,7 +3,6 @@
 		"id": "7da25f8b-3500-4a77-bbfd-983f6cdc98c6",
 		"date_from": "2024-04",
 		"date_to": null,
-		"user": "86fd0a31-4d1c-4950-99bc-959aa77d33f7",
 		"company": "Objective",
 		"stack": [
 			"Python",
@@ -34,7 +33,6 @@
 		"id": "eb142ff1-288e-4607-93d4-f4fbc89d53b7",
 		"date_from": "2022-03",
 		"date_to": "2024-04",
-		"user": "86fd0a31-4d1c-4950-99bc-959aa77d33f7",
 		"company": "idwall",
 		"stack": [
 			"Python",
@@ -70,7 +68,6 @@
 		"id": "1f05a162-e21b-4977-a6a9-61f759aaa204",
 		"date_from": "2021-01",
 		"date_to": "2022-03",
-		"user": "86fd0a31-4d1c-4950-99bc-959aa77d33f7",
 		"company": "Zetta",
 		"stack": [
 			"Python",
@@ -104,7 +101,6 @@
 		"id": "829bb502-0c10-45b4-830a-c9847c2d255d",
 		"date_from": "2019-10",
 		"date_to": "2020-10",
-		"user": "86fd0a31-4d1c-4950-99bc-959aa77d33f7",
 		"company": "ESC",
 		"stack": [
 			"Python",
