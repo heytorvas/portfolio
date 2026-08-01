@@ -29,10 +29,10 @@ describe("dependency policy", () => {
 		}
 	});
 
-	it("stays on React 18 and Tailwind 3 ranges", () => {
+	it("stays on React 19 and Tailwind 3 ranges", () => {
 		const pkg = readPkg();
-		expect(pkg.dependencies?.react).toMatch(/\b18\./);
-		expect(pkg.dependencies?.["react-dom"]).toMatch(/\b18\./);
+		expect(pkg.dependencies?.react).toMatch(/\b19\./);
+		expect(pkg.dependencies?.["react-dom"]).toMatch(/\b19\./);
 		expect(pkg.devDependencies?.tailwindcss).toMatch(/\b3\./);
 	});
 
