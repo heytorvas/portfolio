@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	reactStrictMode: true,
-	// Writable build dir — legacy `.next/` is owned by nobody and cannot be cleared from this environment
-	distDir: ".next-build",
+	// Override with NEXT_DIST_DIR if the local `.next/` is unwritable; defaults to the Next.js standard.
+	distDir: process.env.NEXT_DIST_DIR || ".next",
 	pageExtensions: ["js", "jsx", "ts", "tsx"],
 	images: {
 		remotePatterns: [

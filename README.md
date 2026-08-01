@@ -6,6 +6,8 @@ Personal portfolio for Heytor Victor ([heytor.dev](https://heytor.dev)).
 
 - Node.js 20+
 
+If the local `.next` directory is unwritable, run with `NEXT_DIST_DIR=.next-build`.
+
 ## Scripts
 
 - `npm run dev` — local development

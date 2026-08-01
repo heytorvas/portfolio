@@ -1,8 +1,6 @@
 import aboutData from "@/public/api/about.json";
 
 const About = () => {
-	const data = aboutData;
-
 	return (
 		<section className="pb-14 border-b border-slate-300 mb-14">
 			<h1 className="font-semibold text-4xl mb-4 text-slate-950">
@@ -12,7 +10,7 @@ const About = () => {
 				</span>
 			</h1>
 			<p className="text-slate-700 text-lg md:text-xl leading-normal">
-				{data.summary}
+				{aboutData.summary}
 			</p>
 		</section>
 	);

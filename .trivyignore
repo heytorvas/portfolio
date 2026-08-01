@@ -1,0 +1,5 @@
+# GHSA-f88m-g3jw-g9cj (sharp prototype pollution, fixed in sharp >= 0.35.0)
+# Next.js 16 pins sharp as an optional dependency; we cannot bump it independently
+# without breaking the Next.js peer range. Accepted residual until upstream Next
+# bumps its sharp pin. See the fix(deps) commit body for the npm audit rationale.
+GHSA-f88m-g3jw-g9cj

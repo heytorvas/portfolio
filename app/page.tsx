@@ -1,6 +1,6 @@
-import About from "@/app/components/about/page";
-import Educations from "@/app/components/educations/page";
-import Experiences from "@/app/components/experiences/page";
+import About from "@/app/components/about";
+import Educations from "@/app/components/educations";
+import Experiences from "@/app/components/experiences";
 
 export default function Home() {
 	return (
