@@ -22,6 +22,11 @@ describe("Docker production image", () => {
 		expect(dockerfile).toMatch(/node:22-alpine/);
 	});
 
+	it("strips global npm from the runner so base-image npm CVEs are not shipped", () => {
+		expect(dockerfile).toContain("/usr/local/lib/node_modules/npm");
+		expect(dockerfile).toMatch(/rm -rf[\s\S]*\/usr\/local\/lib\/node_modules\/npm/);
+	});
+
 	it("ships a .dockerignore", () => {
 		expect(existsSync(path.join(process.cwd(), ".dockerignore"))).toBe(
 			true,
