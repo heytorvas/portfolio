@@ -1,6 +1,3 @@
-"use client";
-
-import React from "react";
 import { convertDate } from "@/lib/utils";
 import { Title } from "@/app/components/title";
 import Image from "next/image";

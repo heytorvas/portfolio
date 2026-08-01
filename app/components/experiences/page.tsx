@@ -1,6 +1,3 @@
-"use client";
-
-import React from "react";
 import { Title } from "@/app/components/title";
 import { Badge } from "@/app/components/badge";
 import { convertDate } from "@/lib/utils";
@@ -31,7 +28,7 @@ const Experiences = () => {
 								<span className="text-slate-800 text-xl font-semibold">
 									{exp.company}{" "}
 									<span className="text-slate-500 col-span-2 text-sm font-medium tracking-tighter font-mono">
-										{convertDate(exp.date_from)} → {convertDate(exp.date_to!)}
+										{convertDate(exp.date_from)} → {convertDate(exp.date_to)}
 									</span>
 								</span>
 

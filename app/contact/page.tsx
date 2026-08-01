@@ -1,12 +1,14 @@
+import Link from "next/link";
 import { PageHeader } from "@/app/components/page-header";
 import { Title } from "@/app/components/title";
-import Link from "next/link";
 
-const contact: {
+type ContactMethod = {
 	method: string;
 	link: string;
 	label: string;
-}[] = [
+};
+
+const contactMethods: ContactMethod[] = [
 	{
 		method: "Email",
 		link: "mailto:heytor@heytor.dev",
@@ -28,7 +30,8 @@ const contact: {
 		label: "@heytor",
 	},
 ];
-export default async function InfoPage() {
+
+export default function ContactPage() {
 	return (
 		<main className="px-4 md:px-0">
 			<PageHeader title="Contact" />
@@ -38,20 +41,17 @@ export default async function InfoPage() {
 					about your project or just say hi, you can reach me using the
 					following methods.
 				</p>
-
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-					{contact.map((contactMethod) => {
-						return (
-							<div className="flex flex-col" key={contactMethod.method}>
-								<Title as="h2" variant="tertiary">
-									{contactMethod.method}
-								</Title>
-								<Link href={contactMethod.link} className="text-slate-700">
-									{contactMethod.label}
-								</Link>
-							</div>
-						);
-					})}
+					{contactMethods.map((item) => (
+						<div className="flex flex-col" key={item.method}>
+							<Title as="h2" variant="tertiary">
+								{item.method}
+							</Title>
+							<Link href={item.link} className="text-slate-700">
+								{item.label}
+							</Link>
+						</div>
+					))}
 				</div>
 			</section>
 		</main>
