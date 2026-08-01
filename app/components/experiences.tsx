@@ -1,7 +1,6 @@
 import { Title } from "@/app/components/title";
 import { Badge } from "@/app/components/badge";
-import { convertDate } from "@/lib/utils";
-import Image from "next/image";
+import { TimelineItem } from "@/app/components/timeline-item";
 import { experiences } from "@/lib/content/experiences";
 
 const Experiences = () => {
@@ -14,53 +13,44 @@ const Experiences = () => {
 			<div className="pb-14 border-b border-slate-300 mb-14">
 				{experiences.map((exp) => {
 					return (
-						<div className="flex gap-4 py-6" key={exp.id}>
-							<Image
-								width={56}
-								height={56}
-								src={exp.logo}
-								alt={`${exp.company} logo`}
-								className="w-14 h-14 rounded-xl"
-							/>
-							<div className="flex flex-col col-span-9">
-								<span className="text-slate-800 text-xl font-semibold">
-									{exp.company}{" "}
-									<span className="text-slate-500 col-span-2 text-sm font-medium tracking-tighter font-mono">
-										{convertDate(exp.date_from)} → {convertDate(exp.date_to)}
-									</span>
-								</span>
+						<TimelineItem
+							key={exp.id}
+							logoSrc={exp.logo}
+							logoAlt={`${exp.company} logo`}
+							title={exp.company}
+							dateFrom={exp.date_from}
+							dateTo={exp.date_to}
+						>
+							{exp.details.map((detail) => {
+								return (
+									<div className="flex flex-col" key={detail.role}>
+										<span className="text-slate-700 text-lg">
+											{detail.role}
+										</span>
 
-								{exp.details.map((detail) => {
-									return (
-										<div className="flex flex-col col-span-9" key={detail.role}>
-											<span className="text-slate-700 text-lg">
-												{detail.role}
-											</span>
-
-											<div className="mt-3">
-												<p>
-													<b>Project:</b> {detail.project};
-												</p>
-												<p>
-													<b>Description:</b>
-												</p>
-												<ul>
-													{detail.description.map((desc) => {
-														return <li key={desc}>• {desc};</li>;
-													})}
-												</ul>
-											</div>
+										<div className="mt-3">
+											<p>
+												<b>Project:</b> {detail.project};
+											</p>
+											<p>
+												<b>Description:</b>
+											</p>
+											<ul>
+												{detail.description.map((desc) => {
+													return <li key={desc}>• {desc};</li>;
+												})}
+											</ul>
 										</div>
-									);
-								})}
+									</div>
+								);
+							})}
 
-								<div className="flex flex-wrap gap-2 py-3">
-									{exp.stack.map((tech) => {
-										return <Badge key={tech}>{tech}</Badge>;
-									})}
-								</div>
+							<div className="flex flex-wrap gap-2 py-3">
+								{exp.stack.map((tech) => {
+									return <Badge key={tech}>{tech}</Badge>;
+								})}
 							</div>
-						</div>
+						</TimelineItem>
 					);
 				})}
 			</div>
