@@ -10,6 +10,19 @@ on:
       - main
 
 jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
+
   vuln-image:
     runs-on: ubuntu-latest
     steps:
@@ -18,7 +31,7 @@ jobs:
         working-directory: .
         run: docker build . --file Dockerfile --tag portfolio:latest
       - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@master
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
         with:
           image-ref: portfolio:latest
           format: 'table'
