@@ -7,7 +7,7 @@ import localFont from "next/font/local";
 import { JetBrains_Mono } from "next/font/google";
 
 import clsx from "clsx";
-import { curriculum } from "@/app/components/utils";
+import { RESUME_URL } from "@/lib/constants";
 
 const SaansFont = localFont({
 	src: "./saans-font.woff2",
@@ -86,7 +86,7 @@ export default function RootLayout({
 								Contact
 							</Link>
 							<Link
-								href={curriculum}
+								href={RESUME_URL}
 								target="_blank"
 								className="group bg-slate-950 hover:bg-slate-800 transition-colors inline-block font-mono text-xs-line-height font-semibold rounded-full px-4 text-white"
 							>

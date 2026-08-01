@@ -6,7 +6,9 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint"
+        "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+        "test": "vitest run",
+        "test:watch": "vitest"
     },
     "dependencies": {
         "@vercel/analytics": "^1.4.1",
@@ -24,15 +26,21 @@
     "devDependencies": {
         "@biomejs/biome": "1.9.3",
         "@tailwindcss/typography": "^0.5.16",
-        "@types/node": "^20.17.16",
+        "@testing-library/dom": "^10.4.1",
+        "@testing-library/jest-dom": "^7.0.0",
+        "@testing-library/react": "^16.3.2",
+        "@types/node": "^20.19.43",
         "@types/react": "^18.3.18",
         "@types/react-dom": "^18.3.5",
+        "@vitejs/plugin-react": "^6.0.5",
         "autoprefixer": "^10.4.20",
         "eslint": "^8.57.1",
         "eslint-config-next": "^14.2.23",
+        "jsdom": "^29.1.1",
         "postcss": "^8.5.10",
         "tailwindcss": "^3.4.17",
-        "typescript": "^5.7.3"
+        "typescript": "^5.7.3",
+        "vitest": "^4.1.10"
     },
     "node": ">=20"
 }

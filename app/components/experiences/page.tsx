@@ -3,7 +3,7 @@
 import React from "react";
 import { Title } from "@/app/components/title";
 import { Badge } from "@/app/components/badge";
-import { convertDate } from "@/app/components/utils";
+import { convertDate } from "@/lib/utils";
 import Image from "next/image";
 import experiencesData from "@/public/api/experiences.json";
 
