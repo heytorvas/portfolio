@@ -36,3 +36,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Agent / local design scratch (never publish)
+.superpowers/
+docs/superpowers/
