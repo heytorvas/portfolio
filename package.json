@@ -5,7 +5,7 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build",
-        "start": "next start",
+        "start": "node scripts/start-standalone.mjs",
         "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
         "test": "vitest run",
         "test:watch": "vitest"
@@ -36,6 +36,6 @@
         "vitest": "^4.1.10"
     },
     "engines": {
-        "node": ">=20"
+        "node": ">=22"
     }
 }

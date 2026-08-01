@@ -16,6 +16,11 @@ describe("CI workflow", () => {
 		expect(yaml).toContain("npm run build");
 	});
 
+	it("runs on a maintained (non-EOL) Node LTS version", () => {
+		expect(yaml).not.toMatch(/node-version:\s*["']?20["']?/);
+		expect(yaml).toMatch(/node-version:\s*["']?22["']?/);
+	});
+
 	it("does not pin Trivy to @master", () => {
 		expect(yaml).not.toContain("trivy-action@master");
 		expect(yaml).toMatch(

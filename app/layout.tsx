@@ -67,7 +67,7 @@ export default function RootLayout({
 						</Link>
 						<nav className="flex gap-4">
 							<Link
-								className="text-950 text-sm tracking-tighter font-mono font-semibold"
+								className="text-slate-950 text-sm tracking-tighter font-mono font-semibold"
 								href="/contact"
 							>
 								Contact

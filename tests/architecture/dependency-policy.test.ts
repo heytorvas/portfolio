@@ -5,6 +5,8 @@ import { describe, expect, it } from "vitest";
 type Pkg = {
 	dependencies?: Record<string, string>;
 	devDependencies?: Record<string, string>;
+	scripts?: Record<string, string>;
+	engines?: Record<string, string>;
 };
 
 function readPkg(): Pkg {
@@ -52,5 +54,16 @@ describe("dependency policy", () => {
 		const pkg = readPkg();
 		expect(pkg.dependencies?.next).toMatch(majorRange(16));
 		expect(pkg.devDependencies?.["eslint-config-next"]).toMatch(majorRange(16));
+	});
+
+	it("does not use `next start`, which is unsupported with output: standalone", () => {
+		const pkg = readPkg();
+		expect(pkg.scripts?.start).not.toMatch(/next start/);
+		expect(pkg.scripts?.start).toMatch(/standalone|server\.js/);
+	});
+
+	it("requires a maintained (non-EOL) Node LTS version", () => {
+		const pkg = readPkg();
+		expect(pkg.engines?.node).toMatch(/>=\s*22/);
 	});
 });
