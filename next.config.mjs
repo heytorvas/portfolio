@@ -3,9 +3,8 @@ const nextConfig = {
 	reactStrictMode: true,
 	// Writable build dir — legacy `.next/` is owned by nobody and cannot be cleared from this environment
 	distDir: ".next-build",
-	pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
+	pageExtensions: ["js", "jsx", "ts", "tsx"],
 	images: {
-		// domains: ['encrypted-tbn0.gstatic.com', 'www.unitins.br']
 		remotePatterns: [
 			{
 				protocol: "https",
@@ -17,15 +16,13 @@ const nextConfig = {
 			},
 		],
 	},
-	redirects: async () => {
-		return [
-			{
-				source: "/profile",
-				destination: "/",
-				permanent: true,
-			},
-		];
-	},
+	redirects: async () => [
+		{
+			source: "/profile",
+			destination: "/",
+			permanent: true,
+		},
+	],
 };
 
 export default nextConfig;
