@@ -62,6 +62,16 @@ describe("dependency policy", () => {
 		expect(pkg.scripts?.start).toMatch(/standalone|server\.js/);
 	});
 
+	it("keeps standalone output off Vercel so the platform tracer can run", () => {
+		const config = readFileSync(
+			path.join(process.cwd(), "next.config.mjs"),
+			"utf8",
+		);
+		expect(config).toMatch(/process\.env\.VERCEL/);
+		expect(config).toMatch(/output:\s*["']standalone["']/);
+		expect(config).not.toMatch(/^\s*output:\s*["']standalone["']/m);
+	});
+
 	it("requires a maintained (non-EOL) Node LTS version", () => {
 		const pkg = readPkg();
 		expect(pkg.engines?.node).toMatch(/>=\s*22/);
